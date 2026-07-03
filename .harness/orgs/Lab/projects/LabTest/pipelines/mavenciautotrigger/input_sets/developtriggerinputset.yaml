@@ -1,0 +1,14 @@
+inputSet:
+  name: develop-trigger-inputset
+  identifier: developtriggerinputset
+  orgIdentifier: Lab
+  projectIdentifier: LabTest
+  pipeline:
+    identifier: mavenciautotrigger
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
