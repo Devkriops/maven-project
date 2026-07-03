@@ -1,0 +1,19 @@
+pipeline:
+  name: maven-ci-autotrigger
+  identifier: mavenciautotrigger
+  projectIdentifier: LabTest
+  orgIdentifier: Lab
+  tags: {}
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        template:
+          templateRef: maven
+          versionLabel: "3.9"
+  properties:
+    ci:
+      codebase:
+        connectorRef: Github
+        repoName: maven-project
+        build: <+input>
