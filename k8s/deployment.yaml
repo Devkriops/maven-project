@@ -16,10 +16,17 @@ spec:
     spec:
       containers:
         - name: harness-lab
-          image: harness-lab:latest
-          imagePullPolicy: IfNotPresent
+          image: <+artifact.image>
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
           readinessProbe:
             httpGet:
               path: /hello
