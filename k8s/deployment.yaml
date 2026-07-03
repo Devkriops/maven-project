@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: harness-lab
-          image: <+artifact.image>
+          image: {{ .Values.image }}
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
