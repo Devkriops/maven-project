@@ -1,5 +1,6 @@
 inputSet:
   name: develop-trigger-inputset
+  tags: {}
   identifier: developtriggerinputset
   orgIdentifier: Lab
   projectIdentifier: LabTest
