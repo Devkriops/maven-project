@@ -1,5 +1,6 @@
 inputSet:
   name: trigggermaster
+  tags: {}
   identifier: trigggermaster
   orgIdentifier: Lab
   projectIdentifier: LabTest
