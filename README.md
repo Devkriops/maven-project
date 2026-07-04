@@ -71,3 +71,5 @@ Hello from Harness Lab
 ## Outcome
 
 This project showcases a complete CI/CD implementation using Harness, automating the build, containerization, and deployment of a Java application to Kubernetes. It demonstrates Git-triggered automation, multi-environment deployments, and deployment validation on GKE.
+
+Add 1
