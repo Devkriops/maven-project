@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: harness-lab-dev
+  labels:
+    app: harness-lab
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harness-lab
+      environment: dev
+  template:
+    metadata:
+      labels:
+        app: harness-lab
+        environment: dev
+    spec:
+      containers:
+        - name: harness-lab
+          image: {{ .Values.image }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+          readinessProbe:
+            httpGet:
+              path: /hello
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /hello
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
