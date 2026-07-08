@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: harness-lab
-          image: us-central1-docker.pkg.dev/harness-lab-501205/maven-project-repo/maven-project:develop
+          image: us-central1-docker.pkg.dev/harness-lab-501205/maven-project-repo/maven-project:feature-release07032026
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
